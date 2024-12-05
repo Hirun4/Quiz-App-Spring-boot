@@ -20,10 +20,12 @@ public class QuestionController {
 
     @GetMapping("allQuestions")
     public List<Question> getAllQuestions(){
-//      return questionService.getAllQuestions();
-        List<Question> questions = questionService.getAllQuestions();
-        System.out.println(questions);  // Log the questions data
-        return questions;
+      return questionService.getAllQuestions();
+
+
+    }
+
+    public List<Question> getQuestionsByCategory(){
 
     }
 
