@@ -1,9 +1,13 @@
 package com.QuizMaster.quizapp;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 
+@Data
+@Entity
 public class Question {
 
     @Id
@@ -16,4 +20,5 @@ public class Question {
     private String option4;
     private String rightAnswer;
     private String difficultylevel;
+    private String category;
 }
