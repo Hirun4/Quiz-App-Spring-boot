@@ -40,6 +40,6 @@ public class QuestionService {
 
     public ResponseEntity<String> addQuestion(Question question) {
           questionDao.save(question);
-          return "Success";
+          return new ResponseEntity<>("Success",HttpStatus.CREATED);
     }
 }
