@@ -2,6 +2,7 @@ package com.QuizMaster.quizapp.controller;
 
 
 import com.QuizMaster.quizapp.model.Question;
+import com.QuizMaster.quizapp.model.QuestionWrapper;
 import com.QuizMaster.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class QuizController {
     }
 
     @GetMapping("get/{id}")
-    public ResponseEntity<List<Question>> getQuizQuestions(@PathVariable Integer id){
-
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
+        return quizService.getQuizQuestions(id);
     }
 }
