@@ -20,7 +20,11 @@ public class QuestionService {
 
 
     public ResponseEntity<List<Question>> getAllQuestions() {
-        return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Question> getQuestionsByCategory(String category) {
