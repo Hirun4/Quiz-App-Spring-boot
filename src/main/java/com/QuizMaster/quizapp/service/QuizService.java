@@ -40,5 +40,7 @@ public class QuizService {
        Optional<Quiz> quiz =  quizDao.findById(id);
        List<Question> questionsFromDB = quiz.get().getQuestions();
        List<QuestionWrapper> questionsForUser = new ArrayList<>();
+
+       return new ResponseEntity<>(questionsForUser,HttpStatus.OK);
     }
 }
