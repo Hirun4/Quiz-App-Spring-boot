@@ -30,10 +30,15 @@ public class QuestionService {
     }
 
     public ResponseEntity<List<Question>> getQuestionsByCategory(String category) {
-        return questionDao.findByCategory(category);
+        try {
+            return new ResponseEntity<>(questionDao.findByCategory(category), HttpStatus.OK);
+        }catch (Exception e) {
+                e.printStackTrace();
+            }
+            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
-    public String addQuestion(Question question) {
+    public ResponseEntity<String> addQuestion(Question question) {
           questionDao.save(question);
           return "Success";
     }
