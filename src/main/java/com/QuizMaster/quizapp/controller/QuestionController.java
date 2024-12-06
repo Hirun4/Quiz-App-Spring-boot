@@ -29,7 +29,7 @@ public class QuestionController {
     }
 
     public String addQuestion(@RequestBody Question question){
-
+        return QuestionService.addQuestion(question);
     }
 
 }
