@@ -6,6 +6,7 @@ import com.QuizMaster.quizapp.dao.QuizDao;
 import com.QuizMaster.quizapp.model.Question;
 import com.QuizMaster.quizapp.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,6 @@ public class QuizService {
         quiz.setQuestions(questions);
         quizDao.save(quiz);
 
-        return ResponseEntity
+        return new ResponseEntity<>("Success", HttpStatus.CREATED);
     }
 }
