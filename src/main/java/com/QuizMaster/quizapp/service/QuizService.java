@@ -42,6 +42,7 @@ public class QuizService {
        List<QuestionWrapper> questionsForUser = new ArrayList<>();
        for(Question q : questionsFromDB){
            QuestionWrapper qw = new QuestionWrapper(q.getId(),q.getQuestionTitle(),q.getOption1(),q.getOption2(),q.getOption3(),q.getOption4());
+           questionsForUser.add(qw);
        }
 
        return new ResponseEntity<>(questionsForUser,HttpStatus.OK);
