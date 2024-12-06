@@ -16,12 +16,14 @@ public class QuizService {
 
     @Autowired
     QuizDao quizDao;
+
+    @Autowired
     QuestionDao questionDao;
 
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 
 
-        List<Question> questions =
+        List<Question> questions = QuestionDao.findRandomQuestionsByCategory();
         Quiz quiz = new Quiz();
         quiz.setTitle(title);
         quiz.setQuestions();
