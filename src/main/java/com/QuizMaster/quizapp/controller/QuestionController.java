@@ -1,7 +1,7 @@
 package com.QuizMaster.quizapp.controller;
 
 
-import com.QuizMaster.quizapp.Question;
+import com.QuizMaster.quizapp.model.Question;
 import com.QuizMaster.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.QuizMaster.quizapp;
+package com.QuizMaster.quizapp.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,8 +16,8 @@ public class Question {
     private String option3;
     private String option4;
     private String rightAnswer;
-//    @Column(name = "difficulty_level")
-    private String difficultyLevel= "easy";
+    @Column(name = "difficulty_level")
+    private String difficultyLevel;
 
     private String category;
 }
